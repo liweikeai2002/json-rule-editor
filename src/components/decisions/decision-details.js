@@ -83,14 +83,14 @@ class DecisionDetails extends Component {
         return (<SweetAlert
             warning
             showCancel
-            confirmBtnText="Yes, Remove it!"
+            confirmBtnText="确定删除!"
             confirmBtnBsStyle="danger"
-            title="Are you sure?"
+            title="是否确认?"
             onConfirm={this.removeCase}
             onCancel={this.cancelAlert}
             focusCancelBtn
           >
-            You will not be able to recover the changes!
+            即将丢失全部修改后的数据！
           </SweetAlert>)
     }
 
@@ -98,14 +98,14 @@ class DecisionDetails extends Component {
         return (<SweetAlert
             warning
             showCancel
-            confirmBtnText="Yes, Remove it!"
+            confirmBtnText="确定删除!"
             confirmBtnBsStyle="danger"
-            title="Are you sure?"
+            title="是否确认?"
             onConfirm={this.removeDecisions}
             onCancel={this.cancelAlert}
             focusCancelBtn
           >
-            You will not be able to recover the changes!
+            即将丢失全部修改后的数据！
           </SweetAlert>)
     }
 
@@ -153,10 +153,10 @@ class DecisionDetails extends Component {
                 <PanelBox className={'boolean'}>
                     <div className="index">{index + 1}</div>
                     <div className="name">{String(key)}</div>
-                    <div className="type">conditions <span className="type-badge">{outcomes[key].length}</span></div>
+                    <div className="type">条件 <span className="type-badge">{outcomes[key].length}</span></div>
                     <div className="menu">
-                        <a href="" onClick={(e) => this.handleExpand(e, index)}> { showCase[index].case ? 'Collapse' : 'View Conditions' }</a>
-                        <a href="" onClick={((e) => this.handleRemoveConditions(e, String(key)))}>Remove</a>
+                        <a href="" onClick={(e) => this.handleExpand(e, index)}> { showCase[index].case ? '折叠' : '查看' }</a>
+                        <a href="" onClick={((e) => this.handleRemoveConditions(e, String(key)))}>删除</a>
                     </div>
                  </PanelBox>
                  

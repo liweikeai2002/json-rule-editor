@@ -16,12 +16,12 @@ import { groupBy } from 'lodash/collection';
 import RuleErrorBoundary from '../../components/error/ruleset-error';
 import SweetAlert from 'react-bootstrap-sweetalert';
 
-const tabs = [{name: 'Facts'}, {name: 'Decisions'}, {name: 'Validate'}, {name: 'Generate'}];
+const tabs = [{name: '属性'}, {name: '规则'}, {name: '验证'}, {name: '生成'}];
 class RulesetContainer extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {activeTab: 'Facts', generateFlag: false };
+        this.state = {activeTab: '属性', generateFlag: false };
         this.generateFile = this.generateFile.bind(this);
         this.cancelAlert = this.cancelAlert.bind(this);
     }
@@ -50,9 +50,9 @@ class RulesetContainer extends Component {
       const { name } = this.props.ruleset;
       return (<SweetAlert
           success
-          title={"File generated!"}
+          title={"知识库文件已创建！"}
           onConfirm={this.cancelAlert}
-        > {`${name} rule is succefully generated at your default download location`}
+        > {`${name} 规则已成功创建，并保存在下载目录中。`}
         </SweetAlert>);
     }
 
@@ -74,12 +74,12 @@ class RulesetContainer extends Component {
           <PageTitle name={name} />
           <Tabs tabs={tabs} onConfirm={this.handleTab} activeTab={this.state.activeTab} />
           <div className="tab-page-container">
-              {this.state.activeTab === 'Facts' && <Attributes attributes={attributes} 
+              {this.state.activeTab === '属性' && <Attributes attributes={attributes} 
                 handleAttribute={this.props.handleAttribute }/>}
-              {this.state.activeTab === 'Decisions' && <Decisions decisions={indexedDecisions || []} attributes={attributes}
+              {this.state.activeTab === '规则' && <Decisions decisions={indexedDecisions || []} attributes={attributes}
               handleDecisions={this.props.handleDecisions} outcomes={outcomes}/>}
-              {this.state.activeTab === 'Validate' && <ValidateRules attributes={attributes} decisions={decisions} />}
-              {this.state.activeTab === 'Generate' && <Banner message={message} ruleset={this.props.ruleset} onConfirm={this.generateFile}/> }
+              {this.state.activeTab === '验证' && <ValidateRules attributes={attributes} decisions={decisions} />}
+              {this.state.activeTab === '生成' && <Banner message={message} ruleset={this.props.ruleset} onConfirm={this.generateFile}/> }
               {this.state.generateFlag && this.successAlert()}
           </div>
         </RuleErrorBoundary>

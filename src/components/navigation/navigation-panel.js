@@ -5,8 +5,8 @@ import { createHashHistory } from 'history';
 import FooterLinks from '../footer/footer';
 import footerLinks from '../../data-objects/footer-links.json';
 
-const navmenu = [{ name: 'Create Rules', navigate: './create-ruleset', iconClass: "icon fa fa-plus-square-o", linkClass: 'navmenu'},
-                 { name: 'Upload Rules', navigate: './home', iconClass: "icon fa fa-cloud-upload", linkClass: 'navmenu' } ];
+const navmenu = [{ name: '创建知识库', navigate: './create-ruleset', iconClass: "icon fa fa-plus-square-o", linkClass: 'navmenu'},
+                 { name: '上传知识库', navigate: './home', iconClass: "icon fa fa-cloud-upload", linkClass: 'navmenu' } ];
 class NavigationPanel extends Component {
 
     constructor(props) {
@@ -31,7 +31,7 @@ class NavigationPanel extends Component {
     render() {
         const { closedState, loggedIn } = this.props;
         let rulesetLink = this.props.rulenames.length > 0 ?
-         [{ name: 'Ruleset', sublinks: this.props.rulenames, iconClass:"rules-icon", linkClass: 'link-heading'}] : [];
+         [{ name: '知识库集', sublinks: this.props.rulenames, iconClass:"rules-icon", linkClass: 'link-heading'}] : [];
 
         rulesetLink = rulesetLink.concat(navmenu);
 

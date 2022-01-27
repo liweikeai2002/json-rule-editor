@@ -97,11 +97,11 @@ class ValidateRules extends Component {
         }
         return (
         <React.Fragment>
-            <Table columns={['Name', 'Value']}>
+            <Table columns={['属性名', '属性值']}>
                      {formElements}
             </Table>
             <div className="btn-group">
-               <Button label={'Validate Ruleset'} onConfirm={this.validateRules} classname="primary-btn" type="submit" />
+               <Button label={'验证规则'} onConfirm={this.validateRules} classname="primary-btn" type="submit" />
            </div>
             <hr/>
                 { loading && <Loader /> }

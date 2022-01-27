@@ -4,11 +4,11 @@
         "label": "v1.0.0"
     },
     {
-        "label": "Report issue",
+        "label": "错误上报",
         "src": "https://github.com/vinzdeveloper/json-rule-editor/issues"
     },
     {
-        "label": "Docs",
+        "label": "使用文档",
         "src": "https://vinzdeveloper.github.io/json-rule-editor/docs/"
     }
 ]

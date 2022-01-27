@@ -48,8 +48,8 @@ class AddAttributes extends Component {
             <form>
                 <div className="add-attribute-wrapper">
                     <div className='form-groups-inline'>
-                        <InputField label="Name" onChange={this.onChangeName} value={this.props.attribute.name} error={this.state.error.name} />
-                        <SelectField label="Type" options={attribute_types} onChange={this.onChangeType} value={this.props.attribute.type} error={this.state.error.type} />
+                        <InputField label="属性名称" onChange={this.onChangeName} value={this.props.attribute.name} error={this.state.error.name} />
+                        <SelectField label="数值类型" options={attribute_types} onChange={this.onChangeType} value={this.props.attribute.type} error={this.state.error.type} />
                     </div>
                     <div className="btn-group">
                         <Button label={buttonProps.primaryLabel} onConfirm={this.handleAdd} classname="primary-btn" type="submit" />

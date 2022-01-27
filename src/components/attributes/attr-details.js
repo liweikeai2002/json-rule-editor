@@ -46,21 +46,21 @@ class AttributeDetails extends Component {
         return (<SweetAlert
             warning
             showCancel
-            confirmBtnText="Yes, Remove it!"
+            confirmBtnText="确定删除!"
             confirmBtnBsStyle="danger"
-            title="Are you sure?"
+            title="是否确认?"
             onConfirm={this.remove}
             onCancel={this.cancelAlert}
             focusCancelBtn
           >
-            You will not be able to recover the changes!
+            即将丢失所有修改后的数据！
           </SweetAlert>)
     }
 
     successAlert = () => {
         return (<SweetAlert
             success
-            title={"Attribute has been removed successfully!!"}
+            title={"已删除!!"}
             onConfirm={this.cancelAlert}
           >
           </SweetAlert>);
@@ -71,7 +71,7 @@ class AttributeDetails extends Component {
     const { attributes } = this.props;
     const { showRuleIndex } = this.state;
 
-    const buttonProps = { primaryLabel: 'Save Changes', secondaryLabel: 'Cancel'};
+    const buttonProps = { primaryLabel: '保存', secondaryLabel: '取消'};
 
 
     const attrList = attributes.map((attr, index) => 
@@ -81,8 +81,8 @@ class AttributeDetails extends Component {
             <div className="name">{attr.name}</div>
             <div className="type"><span className={attr.type}>{attr.type}</span></div>
             <div className="menu">
-                <a href="" onClick={(e) => this.handleEdit(e, index)}>Edit</a>
-                <a href="" onClick={(e) => this.handleRemove(e, attr, index)}>Remove</a>
+                <a href="" onClick={(e) => this.handleEdit(e, index)}>修改</a>
+                <a href="" onClick={(e) => this.handleRemove(e, attr, index)}>删除</a>
             </div>
          </PanelBox>
          { showRuleIndex === index && <AddAttributes attribute={attr} addAttribute={this.updateAttribute} cancel={this.cancelAlert} buttonProps={buttonProps} />

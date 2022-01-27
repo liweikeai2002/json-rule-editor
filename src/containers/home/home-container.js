@@ -130,20 +130,20 @@ class HomeContainer extends Component {
 
     render() {
       const { fileExist, uploadError, message } = this.state;
-      const title = this.props.loggedIn ? "Upload Rules" : "Create / Upload Rules";
+      const title = this.props.loggedIn ? "上传知识库" : "创建/上传 知识库";
       return <div className="home-container">
         <div className="single-panel-container">
         { (fileExist || uploadError) && <Notification body={message.body} heading={message.heading} type={message.type} /> }
           <TitlePanel title={title} titleClass="fa fa-cloud-upload">
             <div className="upload-panel">
               <div className="drop-section" onDrop={this.drop} onDragOver={this.allowDrop}>
-                  <div><label htmlFor="uploadFile">Choose Ruleset directory<input id="uploadFile" type="file" onChange={this.chooseDirectory} webkitdirectory="true" multiple/></label> or Drop Files</div>
-                  {this.state.files.length > 0 && <div className="file-drop-msg">{`${this.state.files.length} json files are dropped!`}</div>}
+                  <div><label htmlFor="uploadFile">选择一个文件 <input id="uploadFile" type="file" onChange={this.chooseDirectory} webkitdirectory="true" multiple/></label> 或者 拖文件到这个位置。</div>
+                  {this.state.files.length > 0 && <div className="file-drop-msg">{`${this.state.files.length} 文件已选择。`}</div>}
               </div>
             </div>
             <div className="btn-group">
-              <Button label={"Upload"} onConfirm={this.handleUpload} classname="primary-btn" type="button" />
-              {!this.props.loggedIn && <Button label={"Create"} onConfirm={() => this.navigate('./create-ruleset')} classname="primary-btn" type="button" disabled={this.state.files.length > 0} />}
+              <Button label={"上传"} onConfirm={this.handleUpload} classname="primary-btn" type="button" />
+              {!this.props.loggedIn && <Button label={"创建"} onConfirm={() => this.navigate('./create-ruleset')} classname="primary-btn" type="button" disabled={this.state.files.length > 0} />}
             </div>
           </TitlePanel>
         </div>

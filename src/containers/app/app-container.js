@@ -27,7 +27,7 @@ class ApplicationContainer extends Component {
         const closednav = this.props.navState !== 'open';
         return(
             <React.Fragment>
-              <Title title={'Json Rule Editor'} />
+              <Title title={'中科智慧农业谷知识库构建工具'} />
               <NavigationPanel closedState={closednav} updateState={this.props.updateState} activeIndex={this.props.activeIndex}
                     rulenames={this.props.rulenames} setActiveRulesetIndex={this.props.setActiveRulesetIndex} loggedIn={this.props.loggedIn}/>
               <AppRoutes closedState={closednav} loggedIn={this.props.loggedIn} />

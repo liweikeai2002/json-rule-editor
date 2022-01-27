@@ -274,9 +274,9 @@ class AddDecision extends Component {
         const { topLevelOptions, factsButton, outcomeOptions } = this.state;
 
         return (<div className="add-decision-step">
-        <div className="step1"><div>Step 1: Add Toplevel</div><ButtonGroup buttons={topLevelOptions} onConfirm={this.handleTopNode}/></div>
-        <div className="step2"><div> Step 2: Add / Remove facts</div><ButtonGroup buttons={factsButton} onConfirm={this.handleChildrenNode} /></div>
-        <div className="step3"><div> Step 3: Add Outcome</div><ButtonGroup buttons={outcomeOptions} onConfirm={this.handleOutputPanel} /></div>
+        <div className="step1"><div>步骤 1: 添加 TOP</div><ButtonGroup buttons={topLevelOptions} onConfirm={this.handleTopNode}/></div>
+        <div className="step2"><div> 步骤 2: 添加 / 删除 属性</div><ButtonGroup buttons={factsButton} onConfirm={this.handleChildrenNode} /></div>
+        <div className="step3"><div> 步骤 3: 添加 决策</div><ButtonGroup buttons={outcomeOptions} onConfirm={this.handleOutputPanel} /></div>
       </div>)
     }
 

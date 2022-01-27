@@ -13,7 +13,7 @@ const Title = (props) => {
 )};
 
 Title.defaultProps = {
-  title: 'Json Rule Editor',
+  title: '中科智慧农业谷知识库构建工具',
 };
 
 Title.propTypes = {

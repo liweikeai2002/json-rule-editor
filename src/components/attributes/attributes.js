@@ -50,7 +50,7 @@ class Attributes extends Component {
     render() {
         const { searchCriteria, bannerflag } = this.state;
 
-        const buttonProps = { primaryLabel: 'Add Facts', secondaryLabel: 'Cancel'};
+        const buttonProps = { primaryLabel: '添加', secondaryLabel: '取消'};
 
         const filteredAttributes = searchCriteria ? this.filterAttribute() : this.props.attributes;
         

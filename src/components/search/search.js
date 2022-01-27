@@ -12,7 +12,7 @@ const Search = ({onConfirm, onChange}) => {
 
     return (<div className="search-container">
         <input type="text" onChange={handleSearch} className="search-field" value={search}/>
-        <button type="button" value="Search" onClick={() => onConfirm(search)} className="search-btn">Search</button>
+        <button type="button" value="Search" onClick={() => onConfirm(search)} className="search-btn">搜索</button>
     </div>);
 };
 

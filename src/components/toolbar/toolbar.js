@@ -27,7 +27,7 @@ class ToolBar extends Component {
 
     reset = () => {
         this.props.reset();
-        this.setState({resetAlert: false, successAlert: true, successMsg: 'Your changes are reset'});
+        this.setState({resetAlert: false, successAlert: true, successMsg: '已重置'});
     }
 
     alert = () => {
@@ -50,14 +50,14 @@ class ToolBar extends Component {
         return (<SweetAlert
             warning
             showCancel
-            confirmBtnText="Yes, Reset it!"
+            confirmBtnText="确定需要重置!"
             confirmBtnBsStyle="danger"
-            title="Are you sure?"
+            title="重置确认?"
             onConfirm={this.reset}
             onCancel={this.cancelAlert}
             focusCancelBtn
           >
-            You will not be able to recover the changes!
+            您将丢失全部的修改记录!
           </SweetAlert>)
     }
 
@@ -66,10 +66,10 @@ class ToolBar extends Component {
         return (<div className="attributes-header">
             {this.alert()}
             <div className="attr-link" onClick={this.props.handleAdd}>
-                <span className="plus-icon" /><span className="text">Add</span> 
+                <span className="plus-icon" /><span className="text">新建</span> 
             </div>
             <div className="attr-link" onClick={this.handleReset}>
-                 <span className="reset-icon" /><span className="text">Reset</span> 
+                 <span className="reset-icon" /><span className="text">重置</span> 
             </div>
             <div><Search onConfirm={this.handleSearch} onChange={this.handleSearch}/></div>
         </div>)

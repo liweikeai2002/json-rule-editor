@@ -1,3 +1,3 @@
 export const DATA_TYPES = {STRING: 'string', BOOLEAN: 'boolean', NUMBER: 'number', ARRAY: 'array'};
 
-export const PLACEHOLDER = { 'string': 'Enter value', 'number': 'Enter numerical value', 'array': 'Ex: item1,item2,item3'};
+export const PLACEHOLDER = { 'string': '输入文本', 'number': '输入数字', 'array': '输入数组：条目1，条目2，条目3'};
